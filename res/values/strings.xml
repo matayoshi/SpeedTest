@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, SpeedTestActivity!</string>
-    <string name="app_name">SpeedTest</string>
+	<string name="app_name">SpeedTest</string>
+	<string name="url">URL:</string>
+	<string name="use_http_client">HttpClient を使う</string>
+	<string name="use_http_url_connection">HttpUrlConnection を使う</string>
+	<string name="default_url">http://www.yahoo.co.jp/</string>
+	<string name="progress_message">しばらくお待ちください</string>
 </resources>

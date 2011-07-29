@@ -1,12 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	>
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+		<TextView 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/url"
+			android:paddingRight="10dp"
+			/>
+		<EditText
+			android:id="@+id/url_address"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/default_url"
+			/>
+	</LinearLayout>
+	<Button
+		android:id="@+id/use_http_client"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/use_http_client"
+		/>
+	<Button
+		android:id="@+id/use_http_url_connection"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/use_http_url_connection"
+		/>
+	<!-- リストビュー(行数が多くなるとスクロールバーを表示) -->
+	<!-- android:fastScrollEnabled="true" でつまみを表示してスクロールしやすくする -->
+	<ListView
+		android:id="@android:id/list"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:choiceMode="singleChoice"
+		android:scrollbars="vertical"
+		android:fastScrollEnabled="true"
+		/>
+	<!-- リストが空の時に表示 -->
+	<TextView
+		android:id="@android:id/empty"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text=""
+		/>
 </LinearLayout>
