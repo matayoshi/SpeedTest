@@ -25,7 +25,7 @@ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package nmtysh.test.speedtest;
+package nmtysh.android.test.speedtest;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
