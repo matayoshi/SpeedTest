@@ -45,6 +45,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -139,9 +140,11 @@ public class SpeedTestActivity extends Activity {
 									.getContent());
 							// br = new BufferedReader(in);
 							// while (br.readLine() != null) {
+							long len = 0;
 							while (in.read() != -1) {
-								;
+								len++;
 							}
+							Log.i("HttpClient", len +" Bytes");
 						}
 					} catch (IOException e) {
 					} finally {
@@ -156,6 +159,9 @@ public class SpeedTestActivity extends Activity {
 							}
 							in = null;
 						}
+						// 接続を閉じる
+						client.getConnectionManager().shutdown();
+						client = null;
 					}
 					publishProgress(i + 1);
 					// Dos攻撃と勘違いされないように
@@ -250,9 +256,11 @@ public class SpeedTestActivity extends Activity {
 						in = new InputStreamReader(connection.getInputStream());
 						// br = new BufferedReader(in);
 						// while (br.readLine() != null) {
+						long len = 0;
 						while (in.read() != -1) {
-							;
+							len++;
 						}
+						Log.i("HttpURLConnection", len +" Bytes");
 					} catch (IOException e) {
 					} finally {
 						/*
@@ -268,6 +276,7 @@ public class SpeedTestActivity extends Activity {
 						}
 						if (connection != null) {
 							connection.disconnect();
+							connection = null;
 						}
 					}
 					publishProgress(i + 1);
